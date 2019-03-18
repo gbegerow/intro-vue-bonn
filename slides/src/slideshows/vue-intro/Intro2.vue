@@ -205,8 +205,60 @@ export default {
       </p>
     </slide> 
 
+    <slide enter="fadein">
+      <h3>VueX &mdash; Spielregeln</h3>
+      <ul>
+        <li class="global">Application(!) State existiert nur im Store</li>
+        <li class="mutate">Der State wird nur über Mutations verändert</li>
+        <li class="async">Asynchrone Logik benutzt immer Actions via dispatch, keine Mutations</li>
+      </ul>
+    </slide> 
 
+    <slide enter="fadein">
+      <h3>VueX &mdash; Demo (Nuxt Version)</h3>
+      <div class="compare">
+        <div class="left">
+          <p>stars.vue</p>
+          <eg-code-block lang='js'>
+            <div v-pre >
+&lt;template>
+  &lt;h1>Stars: {{ $store.state.stars }}&lt;/h1>
+&lt;/template>
 
+&lt;script>
+export default {
+  async fetch ({ store, params }) {
+    await store.dispatch('GET_STARS');
+  }
+}
+&lt;/script>
+            </div>
+          </eg-code-block>
+        </div>
+        <div class="right">
+          <p>store/index.js</p>
+          <eg-code-block lang='js'>
+            <div v-pre >
+export const state = () => ({
+  stars: 0.0
+})
+
+export const mutations = {
+  SET_STARS (state, stars) {
+    state.stars = stars
+  }
+}
+
+export const actions = {
+  async GET_STARS ({ commit }) {
+    const { data } = await axios.get('http://my-api/stars')
+    commit('SET_STARS', data)
+  }
+}
+            </div>
+          </eg-code-block>
+        </div>      </div>
+    </slide> 
 
     <slide enter="fadein" class="demo">
       <h1>
@@ -294,6 +346,7 @@ export default {
     }
 
     .SVG-nuxtjs {
+      max-height: 3em;
       .cls-3 {
         fill: white;
       }
@@ -395,6 +448,15 @@ export default {
     }
     li.money:before {
       content: "💰";
+    }
+    li.global:before {
+      content: "🌍";
+    }
+    li.mutate:before {
+      content: "🧬";
+    }
+    li.async:before {
+      content: "⏱";
     }
   }
 }
