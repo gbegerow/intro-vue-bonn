@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Vue Simple</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="vue.js"></script>
+    <style>
+      .clock {
+        font-family: fantasy;
+        font-size: 300%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="text" />
+      <p>{{ text }}</p>
+
+  
+      </ul>
+    </div>
+
+    <script>
+
+
+      const app = new Vue({
+        el: "#app",
+        data: {
+          time: ""
+        },
+        methods: {
+          setClock: function(params) {
+            this.time = new Date().toLocaleTimeString("de");
+          }
+        },
+        mounted: function() {
+          this.time = this.setClock();
+          window.setInterval(() => {
+            this.setClock();
+          }, 1000);
+        }
+      });
+    </script>
+  </body>
+</html>

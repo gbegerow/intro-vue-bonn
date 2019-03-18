@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Vue Simple</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="vue.js"></script>
+    <style>
+      .clock {
+        font-family: fantasy;
+        font-size: 300%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">{{ time }} Uhr</div>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          time: ""
+        },
+        mounted() {
+          this.time = new Date().toLocaleDateString("de");
+          window.setInterval(() => {
+            this.time = new Date().toLocaleTimeString("de");
+          }, 1000);
+        }
+      });
+    </script>
+  </body>
+</html>
