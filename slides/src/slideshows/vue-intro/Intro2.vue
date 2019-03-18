@@ -15,6 +15,7 @@
           Single Page Frameworks wie Angular, Aurelia oder React.
         </p>
         <p>Ein Vortrag für den Webmontag Bonn von Georg Begerow <br />Twitter: @gbegerow Mail: gbegerow@gmail.com</p>
+        <p>Slides unter <a href="https://github.com/gbegerow/intro-vue-bonn">https://github.com/gbegerow/intro-vue-bonn</a></p>
       </slide>
 
     <slide enter="fadein" >
