@@ -14,7 +14,7 @@
           zur mehr als vollwertigen Alternative zu
           Single Page Frameworks wie Angular, Aurelia oder React.
         </p>
-        <p>Ein Vortrag für den Webmontag Bonn von Georg Begerow Twitter: @gbegerow Mail: gbegerow@gmail.com</p>
+        <p>Ein Vortrag für den Webmontag Bonn von Georg Begerow <br />Twitter: @gbegerow Mail: gbegerow@gmail.com</p>
       </slide>
 
     <slide enter="fadein" >
@@ -262,7 +262,7 @@ export const actions = {
 
     <slide enter="fadein" class="demo">
       <h1>
-        Fragen?
+        Danke für die Aufmerksamkeit! 😊👍 
       </h1>
 
     </slide>
